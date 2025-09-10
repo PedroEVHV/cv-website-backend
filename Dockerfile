@@ -1,7 +1,7 @@
 # Build stage (using Maven to compile)
 FROM maven:3.8.6-openjdk-17 AS build
 WORKDIR /app
-COPY . .
+COPY src/main/java .
 RUN mvn clean package -DskipTests
 
 # Package stage (run the JAR with OpenJDK JRE)
