@@ -11,7 +11,7 @@
 	<groupId>dev.</groupId>
 	<artifactId>cv_backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>cv_backend</name>
 	<description>Backend of CV website</description>
 	<url/>
