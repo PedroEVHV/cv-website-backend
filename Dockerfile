@@ -1,5 +1,5 @@
 # Build stage
-FROM maven:3.8.5-openjdk-17 AS build
+FROM maven:3.9.9-eclipse-temurin-21 AS build
 WORKDIR /app
 # Copy pom.xml first to leverage Docker cache for dependencies
 COPY pom.xml ./
@@ -9,7 +9,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Package stage
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 VOLUME /tmp
 COPY --from=build /app/target/cv-backend-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 10000
