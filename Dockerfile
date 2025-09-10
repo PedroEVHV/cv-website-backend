@@ -11,7 +11,7 @@ RUN mvn clean package -DskipTests
 # Package stage
 FROM eclipse-temurin:21-jre-alpine
 VOLUME /tmp
-COPY --from=build /app/target/cv-backend-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 10000
 # Render assigns a dynamic port; expose a placeholder
 ENTRYPOINT ["java", "-jar", "/app.jar"]
